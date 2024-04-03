@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 public class Example {
 
     @RequestMapping("/")
-    String home() {
-        return "Hello World - welcome Charan 12345678";
+    public String index() {
+        return "index";
     }
 
     public static void main(String[] args) throws Exception {
