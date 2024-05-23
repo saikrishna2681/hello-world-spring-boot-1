@@ -34,17 +34,6 @@
             push: false
             tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:latest
 
-        - name: login to docker hub
-          uses: azure/docker-login@v1
-          with:
-            login-server: ${{ secrets.ACR_ENDPOINT }}
-            username: ${{ secrets.ACR_USERNAME }}
-            password: ${{ secrets.ACR_PASSWORD }}
+        
 
-        - name: push the docker image to docker hub
-          uses: docker/build-push-action@v4
-          with:
-            context: .
-            dockerfile: Dockerfile
-            push: true
-            tags: ${{ secrets.ACR_USERNAME }}/rest-api:latest
+            
