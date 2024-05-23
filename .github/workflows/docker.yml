@@ -20,7 +20,7 @@
             java-version: 8
 
         - name: unit tests
-          run: mvn -B test --file pom.xml
+          run: mvn package
 
         - name: build the app
           run: |
