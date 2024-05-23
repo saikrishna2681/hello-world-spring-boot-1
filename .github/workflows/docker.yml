@@ -39,6 +39,13 @@
             login-server: ${{ secrets.ACR_ENDPOINT }}
             username: ${{ secrets.ACR_USERNAME }}
             password: ${{ secrets.ACR_PASSWORD }}
+        - name: Build the frontend image and push it to ACR
+          uses: docker/build-push-action@v5
+          with:
+            push: true
+            tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:latest
+            file: ../Dockerfile
+
 
         
 
