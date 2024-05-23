@@ -1,15 +1,6 @@
-FROM openjdk:8
-EXPOSE 8080
-RUN mkdir target
-ARG JAR_FILE=./target/*.jar
-COPY ${JAR_FILE} target/myproject-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/target/myproject-0.0.1-SNAPSHOT.jar"]
-
-#FROM openjdk:8-jdk-slim as builder
-#WORKDIR build
-#EXPOSE 8080
-#RUN mkdir target
-#ARG JAR_FILE=./target/*.jar
-#COPY ${JAR_FILE} target/app.jar
-#ENTRYPOINT ["java","-jar","/target/app.jar"]
-
+FROM java
+ADD ./target/myproject-0.0.1-SNAPSHOT.jar /myproject-0.0.1-SNAPSHOT.jar
+ADD ./run.sh /run.sh
+RUN chmod a+x /run.sh
+EXPOSE 8080:8080
+CMD /run.sh
