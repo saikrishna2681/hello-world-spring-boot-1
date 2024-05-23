@@ -33,6 +33,12 @@
             dockerfile: Dockerfile
             push: false
             tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:latest
+        - name: 'Docker Login'
+          uses: azure/docker-login@v1
+          with:
+            login-server: ${{ secrets.ACR_ENDPOINT }}
+            username: ${{ secrets.ACR_USERNAME }}
+            password: ${{ secrets.ACR_PASSWORD }}
 
         
 
