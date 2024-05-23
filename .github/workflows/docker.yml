@@ -1,8 +1,5 @@
   name: build and deploy spring-api
   on:
-    push:
-      branches:
-        - master
     workflow_dispatch:
 
   jobs:
@@ -21,6 +18,8 @@
         - name: build the app
           run: |
             mvn -B package --file pom.xml
+        - name: List target directory for debugging
+          run: ls -la target
         - name: build the docker image
           uses: docker/build-push-action@v4
           with:
