@@ -1,4 +1,4 @@
-  name: build and deploy spring-api
+  name: build and deploy java app
   on:
     push:
       branches:
