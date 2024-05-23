@@ -30,9 +30,9 @@
           uses: docker/build-push-action@v4
           with:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: .
             push: false
-            tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:v1
+            tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:v2
         - name: 'Docker Login'
           uses: azure/docker-login@v1
           with:
@@ -43,7 +43,7 @@
           uses: docker/build-push-action@v5
           with:
             push: true
-            tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:v1
+            tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:v2
             file: ../Dockerfile
 
 
