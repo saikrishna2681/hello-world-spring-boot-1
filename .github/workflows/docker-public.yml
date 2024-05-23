@@ -27,12 +27,15 @@
             context: .
             dockerfile: .
             push: false
-            tags: rest-api:v8
+            tags: rest-api:v9
+        - name: 'Docker Login'
+          run: echo "Karthikeya@1" | docker login --username "2681" --password-stdin
+
         - name: Build the frontend image and push it to ACR
           uses: docker/build-push-action@v5
           with:
             push: true
-            tags: 2681/rest-api:v8
+            tags: 2681/rest-api:v9
             file: ../Dockerfile
 
 
