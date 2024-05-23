@@ -43,6 +43,7 @@
           uses: docker/build-push-action@v5
           with:
             push: true
+            
             tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:v4
             file: ../Dockerfile
 
