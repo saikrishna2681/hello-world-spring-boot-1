@@ -1,4 +1,4 @@
 FROM openjdk:8
-ADD /home/runner/work/hello-world-spring-boot/hello-world-spring-boot/target/myproject-0.0.1-SNAPSHOT.jar myproject-0.0.1-SNAPSHOT.jar
+ADD target/myproject-0.0.1-SNAPSHOT.jar myproject-0.0.1-SNAPSHOT.jar
 EXPOSE 8080:8080
 ENTRYPOINT ["java", "-jar", "/myproject-0.0.1-SNAPSHOT.jar"]
