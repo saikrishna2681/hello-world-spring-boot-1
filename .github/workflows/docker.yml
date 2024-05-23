@@ -20,7 +20,7 @@
             java-version: 8
         - name: build the app
           run: |
-            mvn package
+            mvn clean package
         - name: build the docker image
           uses: docker/build-push-action@v4
           with:
