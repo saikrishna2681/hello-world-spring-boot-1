@@ -32,7 +32,7 @@
             context: .
             dockerfile: .
             push: false
-            tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:v2
+            tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:v3
         - name: 'Docker Login'
           uses: azure/docker-login@v1
           with:
@@ -43,7 +43,7 @@
           uses: docker/build-push-action@v5
           with:
             push: true
-            tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:v2
+            tags: ${{ secrets.ACR_ENDPOINT }}/rest-api:v3
             file: ../Dockerfile
 
 
