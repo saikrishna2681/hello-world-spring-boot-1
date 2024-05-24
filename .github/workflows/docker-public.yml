@@ -1,8 +1,5 @@
   name: build and deploy java app
   on:
-    push:
-      branches:
-        - master
     workflow_dispatch:
 
   jobs:
