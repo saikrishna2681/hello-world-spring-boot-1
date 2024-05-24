@@ -1,5 +1,8 @@
   name: build and deploy spring-api
   on:
+    push:
+      branches:
+        - master
     workflow_dispatch:
 
   jobs:
